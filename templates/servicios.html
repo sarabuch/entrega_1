@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Servicios
+{% endblock %}
+
+{% block contenido %}
+<h1>Aca va el contenido de servicios</h1>
+<div class="d-flex" style="margin-top:5rem; margin-left:7rem">
+    {% for service in servicios %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{service.name}}</h5>
+            <p class="card-text">{{service.description}}</p>
+            <p class="card-text">{{service.price}}</p>
+            <a href="#" class="btn btn-primary">Comprar!</a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

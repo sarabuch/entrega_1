@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Crear paciente
+{% endblock %}
+
+{% block contenido %}
+
+{% if form %}
+    <h1>Aca va el contenido de crear pacientes</h1>
+
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit", value="Enviar!">
+    </form>
+{% elif new_patient %}
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{new_patient.name}}</h5>
+            <p class="card-text">{{new_patient.species}}</p>
+            <p class="card-text">{{new_patient.age}}</p>
+            <p class="card-text">{{new_patient.owner}}</p>
+        </div>
+    </div>
+
+{% endif %}
+
+{% endblock %}
