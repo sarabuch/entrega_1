@@ -73,3 +73,10 @@ def crear_paciente(request):
             )
             context ={'new_patient':new_patient}
         return render(request, 'crear_paciente.html', context=context)
+    
+def buscar_producto(request):
+    print(request.GET)
+    #productos = Productos.objects.get()
+    productos = Productos.objects.filter(name__contains = request.GET['search'])
+    context = {'productos':productos}
+    return render(request, 'buscar_producto.html', context = context)  

@@ -1,5 +1,5 @@
 from django.urls import path
-from mascotas.views import crear_producto, crear_servicio, crear_paciente
+from mascotas.views import crear_producto, crear_servicio, crear_paciente, buscar_producto
 from mascotas.views import products, servicios, pacientes
 
 urlpatterns =[
@@ -9,5 +9,5 @@ urlpatterns =[
     path('crear-producto/', crear_producto, name = 'crear-producto'),
     path('crear-servicio/', crear_servicio, name = 'crear-servicio'),
     path('crear-paciente/', crear_paciente, name = 'crear-paciente'),
-    #path('search-product/', search_product_view, name = 'search_product_view')
+    path('buscar-producto/', buscar_producto, name = 'buscar-producto')
 ]
