@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from entrega_1.views import index, login_view
+from entrega_1.views import index, login_view, logout_view, register_view
 
 
 urlpatterns = [
@@ -23,6 +23,6 @@ urlpatterns = [
     path('', index, name = 'index'),
     path('mascotas/', include('mascotas.urls')),
     path('login/', login_view, name = 'login'),
-    #path('logout/', logout_view, name = 'logout'),
-    #path('register/', register_view, name = 'register'),
+    path('logout/', logout_view, name = 'logout'),
+    path('register/', register_view, name = 'register'),
 ]

@@ -32,16 +32,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/mascotas/pacientes/">Pacientes</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/mascotas/crear-producto/">Crear Producto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/mascotas/crear-servicio/">Crear servicio</a>
-                </li>
+                {% if request.user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="/mascotas/crear-paciente/">Crear Paciente</a>
                 </li>
-                {% if request.user.is_authenticated %}
                 <li class="nav-item" style="margin-right: 2rem">
                     <h5>{{request.user.username}}</h5>
                 </li>

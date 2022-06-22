@@ -6,6 +6,7 @@ from django.urls import reverse
 from mascotas.models import Productos, Servicios, Pacientes
 from mascotas.forms import Producto_form, Servicio_form, Paciente_form
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def products(request):
@@ -26,54 +27,15 @@ def pacientes(request):
     context = {'pacientes':pacientes}
     return render(request, 'pacientes.html', context=context)
 
-def crear_producto(request):
-    if request.method == 'GET':
-        form = Producto_form()
-        context = {'form':form}
-        return render(request, 'crear_producto.html', context=context)
-    else:
-        form = Producto_form(request.POST)
-        if form.is_valid():
-            new_product = Productos.objects.create(
-                name = form.cleaned_data['name'],
-                price = form.cleaned_data['price'],
-                description = form.cleaned_data['description'],
-            )
-            context ={'new_product':new_product}
-        return render(request, 'crear_producto.html', context=context)
+class Create_products(LoginRequiredMixin, CreateView):
+    model = Pacientes
+    template_name = 'crear_paciente.html'
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('pacientes.html', kwargs={'pk':self.object.pk})
     
-def crear_servicio(request):
-    if request.method == 'GET':
-        form = Servicio_form()
-        context = {'form':form}
-        return render(request, 'crear_servicio.html', context=context)
-    else:
-        form = Servicio_form(request.POST)
-        if form.is_valid():
-            new_service = Servicios.objects.create(
-                name = form.cleaned_data['name'],
-                price = form.cleaned_data['price'],
-                description = form.cleaned_data['description'],
-            )
-            context ={'new_service':new_service}
-        return render(request, 'crear_servicio.html', context=context)
-    
-def crear_paciente(request):
-    if request.method == 'GET':
-        form = Paciente_form()
-        context = {'form':form}
-        return render(request, 'crear_paciente.html', context=context)
-    else:
-        form = Paciente_form(request.POST)
-        if form.is_valid():
-            new_patient = Pacientes.objects.create(
-                name = form.cleaned_data['name'],
-                species = form.cleaned_data['species'],
-                age = form.cleaned_data['age'],
-                owner = form.cleaned_data['owner'],
-            )
-            context ={'new_patient':new_patient}
-        return render(request, 'crear_paciente.html', context=context)
+
     
 def busqueda(request):
     print(request.GET)
