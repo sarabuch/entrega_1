@@ -4,11 +4,11 @@ from mascotas.models import Productos, Servicios, Pacientes
 
 @admin.register(Productos)
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'price', 'description', 'is_active']
+    list_display = ['name', 'price', 'description', 'is_active', 'image']
 
 @admin.register(Servicios)
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ['name', 'price', 'description', 'is_active']
+    list_display = ['name', 'price', 'description', 'is_active', 'image']
 
 @admin.register(Pacientes)
 class ProductsAdmin(admin.ModelAdmin):

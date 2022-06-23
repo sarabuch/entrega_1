@@ -20,6 +20,7 @@ class Servicios(models.Model):
     price = models.FloatField()
     description = models.CharField(max_length=200, blank=True, null=True)
     is_active = models.BooleanField(default=True)
+    image = models.ImageField(upload_to = 'servicios', blank=True, null=True)
 
     class Meta:
         verbose_name = 'servicio'
