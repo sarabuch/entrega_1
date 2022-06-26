@@ -10,9 +10,8 @@
     {% for service in servicios %}
 
     <div class="card" style="width: 18rem;">
-        
-        {% if product.image %}
-        <img src="{{product.image.url}}" class="card-img-top" >
+        {% if service.image %}
+        <img src="{{service.image.url}}" class="card-img-top" >
         {% endif %}
         
         <div class="card-body">
