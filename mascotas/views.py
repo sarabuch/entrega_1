@@ -85,4 +85,3 @@ class Update_service(UpdateView):
     def get_success_url(self):
         return reverse('detail_service', kwargs = {'pk':self.object.pk})
 
-#hola hola

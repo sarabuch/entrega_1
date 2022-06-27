@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block contenido %}
-<h1>Aca va el contenido de pacientes</h1>
+<h1>Conoce a nuestros pacientes!</h1>
 <div class="d-flex" style="margin-top:5rem; margin-left:7rem">
     {% for patient in pacientes %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+       <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
         <div class="card-body">
             <h5 class="card-title">{{patient.name}}</h5>
-            <p class="card-text">{{patient.species}}</p>
-            <p class="card-text">{{patient.age}}</p>
-            <p class="card-text">{{patient.owner}}</p>
-            <a href="#" class="btn btn-primary">Comprar!</a>
+            <p class="card-text"> Especie: {{patient.species}}</p>
+            <p class="card-text"> Edad: {{patient.age}} años</p>
+            <p class="card-text"> Dueño: {{patient.owner}}</p>
+     <!-- <a href="#" class="btn btn-primary">Comprar!</a> -->
         </div>
     </div>
 
