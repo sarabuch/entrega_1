@@ -10,41 +10,47 @@
     {% for product in productos %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        {% if product.image %}
+        <img src="{{product.image.url}}" class="card-img-top" >
+        {% endif %}
+
         <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.description}}</p>
-            <p class="card-text">{{product.price}}</p>
-            <a href="#" class="btn btn-primary">Comprar!</a>
+            <!--<p class="card-text">{{product.description}}</p>
+            <p class="card-text">{{product.price}}</p> --> 
+            <a href="/mascotas/detail-product/{{product.id}}/" class="btn btn-primary">Más información</a>
         </div>
     </div>
 
     {% endfor %}
-    {% for servicio in servicios %}
+    {% for service in servicios %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        {% if service.image %}
+        <img src="{{service.image.url}}" class="card-img-top" >
+        {% endif %}
+        
         <div class="card-body">
-            <h5 class="card-title">{{servicio.name}}</h5>
-            <p class="card-text">{{servicio.description}}</p>
-            <p class="card-text">{{servicio.price}}</p>
-            <a href="#" class="btn btn-primary">Comprar!</a>
+            <h5 class="card-title">{{service.name}}</h5>
+           <!--  <p class="card-text">{{service.description}}</p>
+            <p class="card-text">{{service.price}}</p> -->
+            <a href="/mascotas/detail-service/{{service.id}}/" class="btn btn-primary">Más información</a>
         </div>
     </div>
 
     {% endfor %}
-    {% for paciente in pacientes %}
+    {% for patient in pacientes %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{paciente.name}}</h5>
-            <p class="card-text">{{paciente.species}}</p>
-            <p class="card-text">{{paciente.age}}</p>
-            <p class="card-text">{{paciente.owner}}</p>
-            <a href="#" class="btn btn-primary">Comprar!</a>
-        </div>
-    </div>
+        <!-- <img class="card-img-top" src=".../100px180/" alt="Card image cap"> -->
+         <div class="card-body">
+             <h5 class="card-title">{{patient.name}}</h5>
+             <p class="card-text"> Especie: {{patient.species}}</p>
+             <p class="card-text"> Edad: {{patient.age}} años</p>
+             <p class="card-text"> Dueño: {{patient.owner}}</p>
+      <!-- <a href="#" class="btn btn-primary">Comprar!</a> -->
+         </div>
+     </div>
 
     {% endfor %}
 </div>
