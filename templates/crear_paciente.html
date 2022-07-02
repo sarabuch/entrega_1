@@ -18,12 +18,12 @@
 {% if form %}
 
     
-    <form action="" method="POST" >
+    <form style="margin-left:30rem" action="" method="POST" >
         {% csrf_token %}
         <table>
             {{form.as_table}}
         </table>
-        <input type="submit", value="Enviar!">
+        <input style="margin-right:38rem" class="btn btn-secondary" type="submit", value="Registrar!">
     </form>
 {% elif new_patient %}
 

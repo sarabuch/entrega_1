@@ -17,14 +17,14 @@
   </div>
 <div class="d-flex" style="margin-top:1rem; margin-left:7rem">
 
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 20rem;">
         {% if object.image %}
         <img src="{{object.image.url}}" class="card-img-top" >
         {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{object.name}}</h5>
             <p class="card-text">{{object.description}}</p>
-            <p class="card-text">{{object.price}}</p>
+            <p class="card-text">Precio: {{object.price}}</p>
             {% if request.user.is_authenticated %}
             <a href="/mascotas/update-service/{{object.id}}/" class="btn btn-primary">Editar</a>
             <a href="/mascotas/delete-service/{{object.id}}/" class="btn btn-danger">Eliminar</a>
