@@ -5,10 +5,19 @@
 {% endblock %}
 
 {% block contenido %}
-
+<div class="card text-center">
+    <div class="card-header">
+    
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">¡Sumá a tu mascota y conseguí increibles descuentos!</h3>
+      <p class="card-text"></p>
+      
+    
+  </div>
 {% if form %}
-    <h3>Suma a tu mascota a nuestro equipo</h3>
 
+    
     <form action="" method="POST" >
         {% csrf_token %}
         <table>
@@ -19,8 +28,9 @@
 {% elif new_patient %}
 
     <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <!--<img class="card-img-top" src=".../100px180/" alt="Card image cap">-->
         <div class="card-body">
+            
             <h5 class="card-title">{{new_patient.name}}</h5>
             <p class="card-text">{{new_patient.species}}</p>
             <p class="card-text">{{new_patient.age}}</p>

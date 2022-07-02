@@ -33,7 +33,7 @@ class Create_products(LoginRequiredMixin, CreateView):
     fields = '__all__'
 
     def get_success_url(self):
-        return reverse('pacientes.html', kwargs={'pk':self.object.pk})
+        return reverse('pacientes')
     
 
     

@@ -34,7 +34,7 @@ class Pacientes(models.Model):
     species = models.CharField(max_length=40)
     age = models.IntegerField()
     owner = models.CharField(max_length=40)
-    image = models.ImageField(upload_to = 'pacientes', blank=True, null=True)
+    #image = models.ImageField(upload_to = 'pacientes', blank=True, null=True)
 
     class Meta:
         verbose_name = 'paciente'

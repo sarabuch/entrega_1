@@ -20,10 +20,10 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                context = {'message':f'Bienvenido {username}!! :D'}
+                context = {'message':f'¡Bienvenido, {username}!'}
                 return render(request, 'index.html', context = context)
             else:
-                context = {'errors':'No hay ningun usuario con esas credenciales!!!'}
+                context = {'errors':'No hay ningún usuario con esas credenciales'}
                 form = AuthenticationForm()
                 return render(request, 'auth/login.html', context = context)
         else:
@@ -51,7 +51,7 @@ def register_view(request):
             password = form.cleaned_data['password1']
             user = authenticate(username = username, password = password)
             login(request, user)
-            context = {'message':f'Usuario creado correctamente, bienvenido {username}'}
+            context = {'message':f'Usuario creado con éxito. Bienvenido, {username}'}
             return render(request, 'index.html', context = context)
         else:
             errors = form.errors

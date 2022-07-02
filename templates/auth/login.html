@@ -6,9 +6,28 @@ Login
 
 {% block contenido %}
 
-    <h2 style="margin-left:30rem">Complete los campos para iniciar sesion</h2>
-    <h3>{{errors}}</h3>
-    <form action="" method="POST" style="margin-left:40rem;margin-top:7rem">
+<div class="card text-center">
+    <div class="card-header">
+    
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Completá los campos para iniciar sesión</h3>
+      <p class="card-text"></p>
+      
+    
+  </div>
+    <!--<h5>{{errors}}</h5>-->
+
+    <!-- <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div> -->
+
+    <form class="mb-3" action="" method="POST" style="margin-left:40rem;margin-top:7rem">
         {% csrf_token %}
         <table>
             {{form.as_table}}

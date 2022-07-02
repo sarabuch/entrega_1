@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block contenido %}
-
-
-    <h3 style="color: red">Estas por eliminar el producto {{object.name}}, estas seguro?</h3>
-
+<div class="card text-center">
+    <div class="card-header">
+    
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">¿Estas seguro de eliminar el producto {{object.name}}?</h3>
+      <p class="card-text"></p>
+      
+    
+  </div>
+    
     <form method = "POST">
         {% csrf_token %}
         <button class="btn btn-danger" type="submit">Eliminar</button>
