@@ -16,8 +16,10 @@
             <h5 class="card-title">{{object.name}}</h5>
             <p class="card-text">{{object.description}}</p>
             <p class="card-text">{{object.price}}</p>
+            {% if request.user.is_authenticated %}
             <a href="/mascotas/update-service/{{object.id}}/" class="btn btn-primary">Editar</a>
             <a href="/mascotas/delete-service/{{object.id}}/" class="btn btn-danger">Eliminar</a>
+            {% endif %}
         </div>
     </div>
 

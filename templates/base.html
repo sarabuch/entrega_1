@@ -14,8 +14,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar " style="background: lightblue;">
-        <a class="navbar-brand" href="/">Inicio</a>
+    <nav class="navbar navbar-expand-lg navbar " style="background: rgb(241, 241, 241);">
+    <!--<nav class="navbar navbar-dark bg-dark"> -->
+        <a class="navbar-brand" href="/"><p style="color:rgb(51, 51, 51)">Home</p></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,23 +25,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/about/">Sobre nosotros <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/about/"><p style="color:rgb(51, 51, 51)">Sobre nosotros</p><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/mascotas/productos/">Productos <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/mascotas/productos/"><p style="color:rgb(51, 51, 51)">Productos</p><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mascotas/servicios/">Servicios</a>
+                    <a class="nav-link" href="/mascotas/servicios/"><p style="color:rgb(51, 51, 51)">Servicios</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mascotas/pacientes/">Pacientes</a>
+                    <a class="nav-link" href="/mascotas/pacientes/"><p style="color:rgb(51, 51, 51)">Pacientes</p></a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/mascotas/crear-paciente/">Crear Paciente</a>
+                    <a class="nav-link" href="/mascotas/crear-paciente/"><p style="color:rgb(51, 51, 51)">¡Sumá a tu mascota!</p></a>
                 </li>
-                <li class="nav-item" style="margin-right: 2rem">
-                    <h5>{{request.user.username}}</h5>
+                <li class="nav-item" style="margin-right: 1rem; margin-left: 17rem; margin-top: 1rem;">
+                    <h6>{{request.user.username}}</h6>
                 </li>
 
                 <li class="nav-item">
@@ -48,21 +49,21 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout/">Logout</a>
+                    <a class="nav-link" href="/logout/"><p style="color:rgb(51, 51, 51)">Logout</p></a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login/">Login</a>
+                    <a class="nav-link" href="/login/"><p style="color:rgb(51, 51, 51)">Login</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/register/">Register</a>
+                    <a class="nav-link" href="/register/"><p style="color:rgb(51, 51, 51)">Registrarse</p></a>
                 </li>
                 {% endif %}
             </ul>
             </form>
                 <form class="form-inline my-2 my-lg-0" action = "/mascotas/busqueda/" method = "GET">
                 <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search" name = 'search'>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-dark" type="submit">Search</button>
             </form>
         </div>
     

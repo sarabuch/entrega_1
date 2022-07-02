@@ -53,21 +53,21 @@ class Detail_service(DetailView):
     model = Servicios
     template_name= 'detail_service.html'
 
-class Delete_product(DeleteView):
+class Delete_product(LoginRequiredMixin, DeleteView):
     model = Productos
     template_name = 'delete_product.html'
 
     def get_success_url(self):
         return reverse('products.html')
 
-class Delete_service(DeleteView):
+class Delete_service(LoginRequiredMixin, DeleteView):
     model = Servicios
     template_name = 'delete_service.html'
 
     def get_success_url(self):
         return reverse('servicios.html')
 
-class Update_product(UpdateView):
+class Update_product(LoginRequiredMixin, UpdateView):
     model = Productos
     template_name = 'update_product.html'
     fields = '__all__'
@@ -76,7 +76,7 @@ class Update_product(UpdateView):
     def get_success_url(self):
         return reverse('detail_product', kwargs = {'pk':self.object.pk})
 
-class Update_service(UpdateView):
+class Update_service(LoginRequiredMixin, UpdateView):
     model = Servicios 
     template_name = 'update_service.html'
     fields = '__all__'
