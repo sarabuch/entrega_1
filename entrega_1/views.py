@@ -65,3 +65,4 @@ def register_view(request):
 
 def about(request):
     return render(request, 'about.html')
+

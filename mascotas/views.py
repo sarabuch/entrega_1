@@ -7,6 +7,7 @@ from mascotas.models import Productos, Servicios, Pacientes
 from mascotas.forms import Producto_form, Servicio_form, Paciente_form
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from entrega_1.mixins import Admin_mixin
 
 # Create your views here.
 def products(request):
@@ -53,7 +54,7 @@ class Detail_service(DetailView):
     model = Servicios
     template_name= 'detail_service.html'
 
-class Delete_product(LoginRequiredMixin, DeleteView):
+class Delete_product(Admin_mixin, DeleteView):
     model = Productos
     template_name = 'delete_product.html'
 

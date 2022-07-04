@@ -24,7 +24,7 @@
             <h5 class="card-title">{{object.name}}</h5>
             <p class="card-text">{{object.description}}</p>
             <p class="card-text">Precio: {{object.price}}</p>
-            {% if request.user.is_authenticated %}
+            {% if request.user.is_staff %}
             <a href="/mascotas/update-product/{{object.id}}/" class="btn btn-primary">Editar</a>
             <a href="/mascotas/delete-product/{{object.id}}/" class="btn btn-danger">Eliminar</a>
             {% endif %}
