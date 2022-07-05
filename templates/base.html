@@ -40,12 +40,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/mascotas/crear-paciente/"><p style="color:rgb(51, 51, 51)">¡Sumá a tu mascota!</p></a>
                 </li>
-                <li class="nav-item" style="margin-right: 1rem; margin-left: 17rem; margin-top: 1rem;">
+                <!--<li class="nav-item" style="margin-right: 1rem; margin-left: 17rem; margin-top: 1rem;">
                     <h6>{{request.user.username}}</h6>
+                </li>-->
+
+                <li class="nav-item">
+                    <img src="{{request.user.user_profile.image.url}}" style="height: 2rem;margin-left:10rem">
                 </li>
 
                 <li class="nav-item">
-                    <img src="{{request.user.user_profile.image.url}}" style="height: 2rem;">
+                    <a class="nav-link" href="/users/editarPerfil/"><p style="color:rgb(51, 51, 51)">{{request.user}}</p></a>
                 </li>
 
                 <li class="nav-item">

@@ -18,14 +18,16 @@ from django.urls import path, include
 from entrega_1.views import index, login_view, logout_view, register_view, about
 from django.conf import settings
 from django.conf.urls.static import static
-
+#from users.views import editarPerfil
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'index'),
     path('mascotas/', include('mascotas.urls')),
+    path('users/', include('users.urls')),
     path('login/', login_view, name = 'login'),
     path('logout/', logout_view, name = 'logout'),
     path('register/', register_view, name = 'register'),
     path('about/', about, name = 'about'),
+    #path('editarPerfil', editarPerfil, name = 'EditarPerfil'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
