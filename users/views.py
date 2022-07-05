@@ -8,6 +8,7 @@ def editarPerfil(request):
 
     if request.method == 'POST':
         form = UserEditForm(request.POST)
+        
         if form.is_valid:
 
             informacion = form.cleaned_data

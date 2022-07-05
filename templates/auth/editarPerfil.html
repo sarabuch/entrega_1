@@ -18,8 +18,8 @@
 
     {% if form %}
         <h2 style="margin-left:30rem">Complete los campos a actualizar</h2>
-        <form action="" method="POST" style="margin-left:40rem;margin-top:7rem"> {% csrf_token %} 
-            
+        <form action="" method="POST" style="margin-left:40rem;margin-top:7rem" enctype="multipart/form-data"> 
+            {% csrf_token %} 
             <table>
                 {{form.as_table}}
             </table>

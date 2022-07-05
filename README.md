@@ -11,3 +11,5 @@ Hay tres vistas para cada uno de los modelos respectivamente, donde aparecen lis
 Desde la página se puede acceder a un formulario donde los clientes pueden registrar a su mascota para recibir beneficios y descuentos.
 
 Incorporamos las funciones de login, logout y registro. Desde el panel de administrador se pueden agregar imágenes y otros datos personales a los usuarios. Haciendo click en la navbar en el nombre del usuario, se abre un formulario para editar el nombre de usuario, email y contraseña. 
+
+Link al video: https://drive.google.com/file/d/1vqiMojYCrxiDP8j1sz2TT8LpT8dHaAdm/view?usp=sharing
